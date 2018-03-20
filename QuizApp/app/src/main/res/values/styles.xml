@@ -7,5 +7,15 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
+    <style name="Label">
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">@android:color/holo_blue_dark</item>
+        <item name="android:layout_marginTop">@dimen/little_margin</item>
+    </style>
+    <style name="Result">
+        <item name="android:textColor">@android:color/holo_red_dark</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:fontFamily">sans-serif</item>
+    </style>
 
 </resources>

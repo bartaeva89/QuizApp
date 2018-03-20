@@ -1,141 +1,188 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout  xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_height="match_parent"
-    android:layout_width="match_parent">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="@dimen/margin">
+
     <ImageView
         android:id="@+id/title_view"
-        android:layout_alignParentTop="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/quiz"/>
+        android:layout_alignParentTop="true"
+        android:src="@drawable/quiz" />
+
+    <TextView
+        android:id="@+id/resultText"
+        style="@style/Result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/title_view"
+        android:visibility="gone"
+        />
+
     <Button
         android:id="@+id/start_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/start_button"
         android:layout_below="@id/title_view"
-        android:onClick="start"/>
+        android:onClick="start"
+        android:text="@string/start_button" />
+
+
     <ScrollView
         android:id="@+id/question_view"
-        android:visibility="gone"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:visibility="gone"
         tools:context="com.example.android.quizapp.MainActivity">
+
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
             <TextView
+                style="@style/Label"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/first_question"/>
+                android:text="@string/first_question" />
+
             <RadioGroup
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
+
                 <RadioButton
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="@string/dog_text" />
+
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="@string/cat_text" />
+
                 <RadioButton
+                    android:id="@+id/first_solution"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="@string/snake_text" />
+
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="@string/goldfish_text" />
             </RadioGroup>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/second_question"
-                    android:layout_weight="1"/>
-                <EditText
-                    android:layout_weight="1"
-                    android:inputType="number"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
-            </LinearLayout>
+
             <TextView
+                style="@style/Label"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/third_question"/>
+                android:layout_weight="1"
+                android:text="@string/second_question" />
+
+            <EditText
+                android:id="@+id/second_solution"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:inputType="number" />
+
+            <TextView
+                style="@style/Label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/third_question" />
 
             <CheckBox
+                android:id="@+id/third_bad_solution_1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/snake_text" />
+
             <CheckBox
+                android:id="@+id/third_good_solution_1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/cat_text" />
+
             <CheckBox
+                android:id="@+id/third_good_solution_2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/dog_text" />
+
             <CheckBox
+                android:id="@+id/third_bad_solution_2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/goldfish_text" />
+
             <TextView
+                style="@style/Label"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/forth_question"/>
+                android:text="@string/forth_question" />
+
             <RadioGroup
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
+
                 <RadioButton
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="@string/snake_no_legs"/>
+                    android:text="@string/snake_no_legs" />
+
                 <RadioButton
+                    android:id="@+id/forth_solution"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="@string/snake_legs" />
             </RadioGroup>
+
             <TextView
+                style="@style/Label"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/fifth_question"/>
+                android:text="@string/fifth_question" />
+
             <CheckBox
+                android:id="@+id/fifth_bad_solution"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/dog_mammal"/>
+                android:text="@string/dog_mammal" />
+
             <CheckBox
+                android:id="@+id/fifth_good_solution_1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/cat_mammal"/>
+                android:text="@string/cat_mammal" />
+
             <CheckBox
+                android:id="@+id/fifth_good_solution_2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/frog_fish"/>
+                android:text="@string/frog_fish" />
+
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/check_button"/>
+                android:layout_marginTop="@dimen/little_margin"
+                android:onClick="checkResult"
+                android:text="@string/check_button" />
 
 
         </LinearLayout>
 
 
-
     </ScrollView>
+
 
 </RelativeLayout>
 

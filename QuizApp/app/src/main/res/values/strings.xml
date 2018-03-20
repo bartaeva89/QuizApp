@@ -18,4 +18,6 @@
     <string name="result"> good answer. </string>
     <string name="start_button">start</string>
     <string name="check_button">Check</string>
+    <string name="correct_answer_message">Your good answers: </string>
+
 </resources>
