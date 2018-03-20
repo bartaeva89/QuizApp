@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">QuizApp</string>
+    <string name="first_question">1. What is the odd?</string>
+    <string name="second_question">2. How many legs does spider have?</string>
+    <string name="third_question">3. Which animals are mammals?</string>
+    <string name="forth_question">4. Which statement is false?</string>
+    <string name="fifth_question">5. Which statements are false?</string>
+    <string name="dog_text">dog</string>
+    <string name="cat_text">cat</string>
+    <string name="snake_text">snake</string>
+    <string name="cow_text">cow</string>
+    <string name="goldfish_text">goldfish</string>
+    <string name="snake_legs">Snake has a lot of legs.</string>
+    <string name="snake_no_legs">Snake has no leg.</string>
+    <string name="dog_mammal">Dog is a mammal.</string>
+    <string name="cat_mammal">Cat is not a mammal.</string>
+    <string name="frog_fish">Frog is a fish.</string>
+    <string name="result"> good answer. </string>
+    <string name="start_button">start</string>
+    <string name="check_button">Check</string>
+</resources>
