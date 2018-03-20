@@ -1,5 +1,6 @@
 package com.example.android.quizapp;
 
+import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -10,9 +11,10 @@ import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.ScrollView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-    private int score=0;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,13 +32,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void checkResult(View v){
-        TextView resultText=(TextView)findViewById(R.id.resultText);
-        ScrollView questionView=(ScrollView)findViewById(R.id.question_view);
-        ImageView tittleView=(ImageView)findViewById(R.id.title_view);
-        Button startButton=(Button)findViewById(R.id.start_button);
-        questionView.setVisibility(View.GONE);
-        tittleView.setVisibility(View.VISIBLE);
-        startButton.setVisibility(View.GONE);
+        int score=0;
         if (checkOne()){
             score++;
         }
@@ -52,8 +48,11 @@ public class MainActivity extends AppCompatActivity {
         if (checkFive()){
             score++;
         }
-        resultText.setVisibility(View.VISIBLE);
-        resultText.setText(getString(R.string.correct_answer_message)+score);
+        Context context = getApplicationContext();
+        CharSequence text = getString(R.string.correct_answer_message)+score;
+        int duration = Toast.LENGTH_SHORT;
+        Toast toast = Toast.makeText(context, text, duration);
+        toast.show();
 
 
     }

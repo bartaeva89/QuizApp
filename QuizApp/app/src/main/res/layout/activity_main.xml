@@ -12,15 +12,6 @@
         android:layout_alignParentTop="true"
         android:src="@drawable/quiz" />
 
-    <TextView
-        android:id="@+id/resultText"
-        style="@style/Result"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/title_view"
-        android:visibility="gone"
-        />
-
     <Button
         android:id="@+id/start_button"
         android:layout_width="match_parent"
