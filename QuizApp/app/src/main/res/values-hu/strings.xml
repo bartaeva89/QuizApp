@@ -19,5 +19,5 @@
     <string name="start_button">Start</string>
     <string name="check_button">Ellenőriz</string>
     <string name="correct_answer_message">Jó válaszok száma: </string>
-
+	<string name="perfect_message">Kiváló! Nincs egyetlen hibád sem!</string>
 </resources>

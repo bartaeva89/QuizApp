@@ -8,9 +8,8 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RadioButton;
-import android.widget.ScrollView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
@@ -23,16 +22,23 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void start(View v){
-        ScrollView questionView=(ScrollView)findViewById(R.id.question_view);
-        ImageView tittleView=(ImageView)findViewById(R.id.title_view);
-        Button startButton=(Button)findViewById(R.id.start_button);
-        questionView.setVisibility(View.VISIBLE);
+        /**
+         * This method shows the questions
+         */
+        LinearLayout questionLayout=(LinearLayout) findViewById(R.id.ll_question_form);
+        ImageView tittleView=(ImageView)findViewById(R.id.iv_tittle);
+        Button startButton=(Button)findViewById(R.id.btn_start);
+        questionLayout.setVisibility(View.VISIBLE);
         tittleView.setVisibility(View.GONE);
         startButton.setVisibility(View.GONE);
     }
 
     public void checkResult(View v){
+        /**
+         * This method counts and write the score.
+         */
         int score=0;
+        CharSequence text;
         if (checkOne()){
             score++;
         }
@@ -49,17 +55,23 @@ public class MainActivity extends AppCompatActivity {
             score++;
         }
         Context context = getApplicationContext();
-        CharSequence text = getString(R.string.correct_answer_message)+score;
+        if (score == 5){
+            text=getString(R.string.perfect_message);
+        }else{
+            text = getString(R.string.correct_answer_message)+score;
+        }
         int duration = Toast.LENGTH_SHORT;
         Toast toast = Toast.makeText(context, text, duration);
         toast.show();
 
-
     }
 
     private boolean checkOne(){
+        /**
+         * This method  checks the first question.
+         */
         boolean good=false;
-        RadioButton firstSolution=(RadioButton) findViewById(R.id.first_solution);
+        RadioButton firstSolution=(RadioButton) findViewById(R.id.rbtn_first_solution);
         if (firstSolution.isChecked()){
             good=true;
         }
@@ -67,8 +79,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private boolean checkTwo(){
+        /**
+         * This method  checks the second question.
+         */
         boolean good=false;
-        EditText secondSolution=(EditText)findViewById(R.id.second_solution);
+        EditText secondSolution=(EditText)findViewById(R.id.et_second_solution);
         if (secondSolution.getText().toString().equals("8")){
             good=true;
         }
@@ -76,11 +91,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private boolean checkThree(){
+        /**
+         * This method  checks the third question.
+         */
         boolean good=false;
-        CheckBox thirdBadSolution1=(CheckBox)findViewById(R.id.third_bad_solution_1);
-        CheckBox thirdBadSolution2=(CheckBox)findViewById(R.id.third_bad_solution_2);
-        CheckBox thirdGoodSolution1=(CheckBox)findViewById(R.id.third_good_solution_1);
-        CheckBox thirdGoodSolution2=(CheckBox)findViewById(R.id.third_good_solution_2);
+        CheckBox thirdBadSolution1=(CheckBox)findViewById(R.id.cb_third_bad_solution_1);
+        CheckBox thirdBadSolution2=(CheckBox)findViewById(R.id.cb_third_bad_solution_2);
+        CheckBox thirdGoodSolution1=(CheckBox)findViewById(R.id.cb_fifth_good_solution_1);
+        CheckBox thirdGoodSolution2=(CheckBox)findViewById(R.id.cb_third_good_solution_2);
         if (!thirdBadSolution1.isChecked()&&!thirdBadSolution2.isChecked()&&thirdGoodSolution1.isChecked()&&thirdGoodSolution2.isChecked()){
             good=true;
         }
@@ -88,8 +106,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private boolean checkFour(){
+        /**
+         * This method  checks the forth question.
+         */
         boolean good=false;
-        RadioButton forthSolution=(RadioButton)findViewById(R.id.forth_solution);
+        RadioButton forthSolution=(RadioButton)findViewById(R.id.rb_forth_solution);
         if (forthSolution.isChecked()){
             good=true;
         }
@@ -97,10 +118,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private boolean checkFive(){
+        /**
+         * This method  checks the fifth question.
+         */
         boolean good=false;
-        CheckBox fifthBadSolution=(CheckBox)findViewById(R.id.fifth_bad_solution);
-        CheckBox fifthGoodSolution1=(CheckBox)findViewById(R.id.fifth_good_solution_1);
-        CheckBox fifthGoodSolution2=(CheckBox)findViewById(R.id.fifth_good_solution_2);
+        CheckBox fifthBadSolution=(CheckBox)findViewById(R.id.cb_fifth_bad_solution);
+        CheckBox fifthGoodSolution1=(CheckBox)findViewById(R.id.cb_fifth_good_solution_1);
+        CheckBox fifthGoodSolution2=(CheckBox)findViewById(R.id.cb_fifth_good_solution_2);
         if (!fifthBadSolution.isChecked()&&fifthGoodSolution1.isChecked()&&fifthGoodSolution2.isChecked()){
             good=true;
         }

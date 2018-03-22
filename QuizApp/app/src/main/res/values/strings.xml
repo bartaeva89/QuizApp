@@ -19,5 +19,6 @@
     <string name="start_button">start</string>
     <string name="check_button">Check</string>
     <string name="correct_answer_message">Your good answers: </string>
+    <string name="perfect_message">Xou are perfect. You have no mistake.</string>
 
 </resources>
